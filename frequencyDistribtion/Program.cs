@@ -9,20 +9,20 @@ namespace frequency_distribution
     {
         static void Main(string[] args)
         {
-            GetColors getColors = new GetColors();
-            getColors.getTowers();
-            getColors.calculateColors();
-            //getColors.calculateColorsGreedy();
+            GetFrequencies getFrequencies = new GetFrequencies();
+            getFrequencies.getTowers();
+            getFrequencies.calculateFrequencies();
+            //getFrequencies.calculateFrequenciesGreedy();
         }
     }
 
-    class GetColors
+    class GetFrequencies
     {
         private int n;
         private List<Tower> towers;
         private double[][] distanceMatrix;
         private double maxDistance = 0;
-        private List<int> bestSolutionColors;
+        private List<int> bestSolutionFrequencies;
         private double bestSolution = double.MaxValue;
         private bool[][] adjacencyMatrix;
 
@@ -95,7 +95,7 @@ namespace frequency_distribution
         }
 
         // All nessisary steps to calcutale tower frequencies 
-        public void calculateColors()
+        public void calculateFrequencies()
         {
 
             n = towers.Count;
@@ -107,26 +107,26 @@ namespace frequency_distribution
             maxDistance = distanceMatrix.SelectMany(subArray => subArray ?? Enumerable.Empty<double>()).Max() + 1;
 
             // List to store the best solution
-            bestSolutionColors = new List<int>();
+            bestSolutionFrequencies = new List<int>();
 
             // List for the current itteration in solution space
-            List<int> currentColors = new List<int>();
+            List<int> currentFrequencies = new List<int>();
 
             // Find optimal solution
-            assignFrequencies(0, 0, currentColors, 0);
+            assignFrequencies(0, 0, currentFrequencies, 0);
 
             // Output best solution
-            Console.WriteLine("Best solution colors:");
+            Console.WriteLine("Best solution frequencies:");
             for (int i = 0; i < n; i++)
             {
-                Console.Write(towers[i].Name + (int)(bestSolutionColors[i] + 110) + " ");
+                Console.Write(towers[i].Name + (int)(bestSolutionFrequencies[i] + 110) + " ");
             }
         }
 
         // Recursivly expolre the solution space to find best solution in a DFS manner
         // Loops throught the Cell Towers sequentially
-        // Give each a color and check if better than current best solution
-        private void assignFrequencies(int i, double value, List<int> currentColors, int startColor)
+        // Give each a  and check if better than current best solution
+        private void assignFrequencies(int i, double value, List<int> currentFrequencies, int startFrequency)
         {
             //base case, when we hit a leaf node
             if (i >= n)
@@ -135,28 +135,28 @@ namespace frequency_distribution
                 if (value < bestSolution)
                 {
                     bestSolution = value;
-                    bestSolutionColors = new List<int>(currentColors);
+                    bestSolutionFrequencies = new List<int>(currentFrequencies);
                 }
                 return;
             }
 
             Tower t = towers[i];
             // starts loop at previous frequency +1
-            for (int color = 0; color < 6; color++)
+            for (int frequency = 0; frequency < 6; frequency++)
             {
-                int current_color = (color + startColor) % 6;
+                int current_frequency = (frequency + startFrequency) % 6;
 
-                // only add to sum if colors are the same
+                // only add to sum if frequencies are the same
                 // by the bottom if the tree should have the total 
                 double newValue = value;
 
                 // get value of current state 
-                foreach (int c in currentColors)
+                foreach (int c in currentFrequencies)
                 {
-                    if (current_color == c)
+                    if (current_frequency == c)
                     {
                         // the bigger the distance the better 
-                        newValue += maxDistance - distanceMatrix[color][c];
+                        newValue += maxDistance - distanceMatrix[frequency][c];
                     }
                 }
                 if (newValue > bestSolution)
@@ -165,10 +165,10 @@ namespace frequency_distribution
                     continue;
                 }
 
-                currentColors.Add(current_color);
-                assignFrequencies(i + 1, newValue, currentColors, current_color + 1);
-                //backtracks by removing tower t from list and re-adding it with a different color
-                currentColors.RemoveAt(currentColors.Count - 1);
+                currentFrequencies.Add(current_frequency);
+                assignFrequencies(i + 1, newValue, currentFrequencies, current_frequency + 1);
+                //backtracks by removing tower t from list and re-adding it with a different frequency
+                currentFrequencies.RemoveAt(currentFrequencies.Count - 1);
             }
         }
 
@@ -222,7 +222,7 @@ namespace frequency_distribution
         }
 
         // Greedy appoch to solution using a coloring alogrithm
-        public void calculateColorsGreedy()
+        public void calculateFrequenciesGreedy()
         {
             n = towers.Count;
 
