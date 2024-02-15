@@ -1,0 +1,14 @@
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\bin\Debug\net8.0\frequencyDistribtion.exe
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\bin\Debug\net8.0\frequencyDistribtion.deps.json
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\bin\Debug\net8.0\frequencyDistribtion.runtimeconfig.json
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\bin\Debug\net8.0\frequencyDistribtion.dll
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\bin\Debug\net8.0\frequencyDistribtion.pdb
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\obj\Debug\net8.0\frequencyDistribtion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\obj\Debug\net8.0\frequencyDistribtion.AssemblyInfoInputs.cache
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\obj\Debug\net8.0\frequencyDistribtion.AssemblyInfo.cs
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\obj\Debug\net8.0\frequencyDistribtion.csproj.CoreCompileInputs.cache
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\obj\Debug\net8.0\frequencyDistribtion.dll
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\obj\Debug\net8.0\refint\frequencyDistribtion.dll
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\obj\Debug\net8.0\frequencyDistribtion.pdb
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\obj\Debug\net8.0\frequencyDistribtion.genruntimeconfig.cache
+C:\Users\Rober\source\repos\frequencyDistribtion\frequencyDistribtion\obj\Debug\net8.0\ref\frequencyDistribtion.dll
